@@ -1,4 +1,4 @@
 apps:
   - app1
-    - path: altapp1
-  - app2
+  - name: app2
+    path: altapp2
