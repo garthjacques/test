@@ -1,1 +1,4 @@
-foo
+apps:
+  - app1
+    - path: altapp1
+  - app2
