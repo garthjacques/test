@@ -1,1 +1,9 @@
-app1[].yml
+name: "app1- Build"
+"on":
+  push:
+    paths: []
+jobs:
+  build:
+    steps:
+      run: "app1/build.sh"
+    runs: "ubuntu-latest"
