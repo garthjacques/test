@@ -6,5 +6,5 @@ name: "app2- Build"
 jobs:
   build:
     steps:
-    - run: "x_app2/build.sh"
+    - run: "x_app2/.dash/build.sh"
     runs-on: "ubuntu-latest"
