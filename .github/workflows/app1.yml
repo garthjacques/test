@@ -5,5 +5,5 @@ name: "app1- Build"
 jobs:
   build:
     steps:
-      - run: "app1/build.sh"
-    runs-on: "ubuntu-latest"
+    - run: "app1/build.sh"
+    runs: "ubuntu-latest"
