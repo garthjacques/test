@@ -6,4 +6,4 @@ jobs:
   build:
     steps:
     - run: "app1/build.sh"
-    runs: "ubuntu-latest"
+    runs-on: "ubuntu-latest"
