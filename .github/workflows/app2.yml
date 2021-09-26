@@ -1,9 +1,10 @@
 name: "app2- Build"
 "on":
   push:
-    paths: []
+    paths:
+    - "app2/**"
 jobs:
   build:
     steps:
-    - run: "app2/build.sh"
+    - run: "x_app2/build.sh"
     runs-on: "ubuntu-latest"

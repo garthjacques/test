@@ -1,7 +1,8 @@
 name: "app1- Build"
 "on":
   push:
-    paths: []
+    paths:
+    - "app1/**"
 jobs:
   build:
     steps:
