@@ -2,10 +2,8 @@ name: "app2"
 "on":
   push:
     paths:
-    - "x_app2/**"
-    paths-ignore:
-    - ".dash/repo-anatomy.yml"
-    - "x_app2/.dash/app-anatomy.yml"
+    - "!.dash/repo-anatomy.yml"
+    - "!x_app2/.dash/app-anatomy.yml"
 jobs:
   app2-build:
     needs: []
