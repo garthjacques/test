@@ -2,3 +2,5 @@ dependencies:
 - "app1"
 trigger-on:
 - "x_app2/**"
+
+
