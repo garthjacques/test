@@ -29,6 +29,7 @@ jobs:
   app2-deploy-dev:
     needs:
     - "app2-crosscheck-app1"
+    - "app2-external"
     steps:
     - uses: "actions/checkout@v2"
     - run: "x_app2/.dash/deployDev.sh"

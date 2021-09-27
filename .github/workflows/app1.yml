@@ -20,7 +20,8 @@ jobs:
     - run: "app1/.dash/external.sh"
     runs-on: "ubuntu-latest"
   app1-deploy-dev:
-    needs: []
+    needs:
+    - "app1-external"
     steps:
     - uses: "actions/checkout@v2"
     - run: "app1/.dash/deployDev.sh"
