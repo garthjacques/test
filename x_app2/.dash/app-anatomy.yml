@@ -1,4 +1,4 @@
 dependencies:
 - "app1"
-paths:
+changeset:
 - "x_app2/**"
