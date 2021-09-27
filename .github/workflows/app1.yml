@@ -1,6 +1,8 @@
 name: "app1"
 "on":
-  push: {}
+  push:
+    paths:
+    - "!app1/.dash/app-anatomy.yml"
 jobs:
   app1:build:
     needs: []
