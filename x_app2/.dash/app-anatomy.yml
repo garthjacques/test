@@ -1,4 +1,4 @@
 dependencies:
-  - app1
+- "app1"
 changeset:
-  - app2/**
+- "x_app2/**"
