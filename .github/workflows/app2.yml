@@ -4,6 +4,7 @@ name: "app2"
     paths:
     - "!.dash/repo-anatomy.yml"
     - "!x_app2/.dash/app-anatomy.yml"
+    - "x_app2/**"
 jobs:
   app2-build:
     needs: []
