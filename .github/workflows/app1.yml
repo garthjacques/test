@@ -1,7 +1,7 @@
 name: "app1"
 "on":
   push:
-    paths:
+    paths-ignore:
     - ".dash/repo-anatomy.yml"
     - "!app1/.dash/app-anatomy.yml"
 jobs:
