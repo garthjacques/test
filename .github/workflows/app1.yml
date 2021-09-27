@@ -1,2 +1,11 @@
 name: "app1 - Build"
-"on": {}
+"on":
+  push:
+    jobs:
+    - steps:
+      - uses: "actions/checkout@v2"
+        with:
+          ref:
+            value: "refs/heads/main"
+      - run: "app1/.dash/build.sh"
+      runs-on: "ubuntu-latest"
