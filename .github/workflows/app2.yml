@@ -1,11 +1,45 @@
-name: "app2 - Build"
+name: "app2"
 "on":
   push: {}
 jobs:
-  build:
+  app2:build:
+    needs: []
     steps:
     - uses: "actions/checkout@v2"
-      with:
-        ref: "refs/heads/main"
     - run: "x_app2/.dash/build.sh"
+    runs-on: "ubuntu-latest"
+  app2:external:
+    needs:
+    - "app2:build"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "x_app2/.dash/external.sh"
+    runs-on: "ubuntu-latest"
+  app2:crosscheck:app1:
+    needs:
+    - "app2:external"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "x_app2/.dash/crosscheck.sh"
+    runs-on: "ubuntu-latest"
+  app2:deploy:dev:
+    needs:
+    - "app2:crosscheck:app1"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "x_app2/.dash/deployDev.sh"
+    runs-on: "ubuntu-latest"
+  app2:deploy:staging:
+    needs:
+    - "app2:deploy:dev"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "x_app2/.dash/deployStaging.sh"
+    runs-on: "ubuntu-latest"
+  app2:deploy:prod:
+    needs:
+    - "app2:deploy:staging"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "x_app2/.dash/deployProd.sh"
     runs-on: "ubuntu-latest"

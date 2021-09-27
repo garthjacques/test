@@ -1,11 +1,37 @@
-name: "app1 - Build"
+name: "app1"
 "on":
   push: {}
 jobs:
-  build:
+  app1:build:
+    needs: []
     steps:
     - uses: "actions/checkout@v2"
-      with:
-        ref: "refs/heads/main"
     - run: "app1/.dash/build.sh"
+    runs-on: "ubuntu-latest"
+  app1:external:
+    needs:
+    - "app1:build"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "app1/.dash/external.sh"
+    runs-on: "ubuntu-latest"
+  app1:deploy:dev:
+    needs: []
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "app1/.dash/deployDev.sh"
+    runs-on: "ubuntu-latest"
+  app1:deploy:staging:
+    needs:
+    - "app1:deploy:dev"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "app1/.dash/deployStaging.sh"
+    runs-on: "ubuntu-latest"
+  app1:deploy:prod:
+    needs:
+    - "app1:deploy:staging"
+    steps:
+    - uses: "actions/checkout@v2"
+    - run: "app1/.dash/deployProd.sh"
     runs-on: "ubuntu-latest"
