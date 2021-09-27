@@ -3,7 +3,7 @@ name: "app2"
   push:
     paths-ignore:
     - ".dash/repo-anatomy.yml"
-    - "!x_app2/.dash/app-anatomy.yml"
+    - "x_app2/.dash/app-anatomy.yml"
 jobs:
   app2-build:
     needs: []
