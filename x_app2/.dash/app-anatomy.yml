@@ -1,4 +1,4 @@
 dependencies:
 - "app1"
-triggerOn:
+trigger-on:
 - "x_app2/**"
