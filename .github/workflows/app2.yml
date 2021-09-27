@@ -2,7 +2,7 @@ name: "app2- Build"
 "on":
   push:
     paths:
-    - "app2/**"
+    - "x_app2/**"
 jobs:
 - steps:
   - uses: "actions/checkout@v2"
