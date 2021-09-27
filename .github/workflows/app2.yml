@@ -25,23 +25,23 @@ jobs:
     - uses: "actions/checkout@v2"
     - run: "x_app2/.dash/crosscheck.sh"
     runs-on: "ubuntu-latest"
-  app2-deploy:dev:
+  app2-deploy-dev:
     needs:
     - "app2-crosscheck-app1"
     steps:
     - uses: "actions/checkout@v2"
     - run: "x_app2/.dash/deployDev.sh"
     runs-on: "ubuntu-latest"
-  app2-deploy:staging:
+  app2-deploy-staging:
     needs:
-    - "app2-deploy:dev"
+    - "app2-deploy-dev"
     steps:
     - uses: "actions/checkout@v2"
     - run: "x_app2/.dash/deployStaging.sh"
     runs-on: "ubuntu-latest"
-  app2-deploy:prod:
+  app2-deploy-prod:
     needs:
-    - "app2-deploy:staging"
+    - "app2-deploy-staging"
     steps:
     - uses: "actions/checkout@v2"
     - run: "x_app2/.dash/deployProd.sh"

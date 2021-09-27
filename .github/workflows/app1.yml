@@ -18,22 +18,22 @@ jobs:
     - uses: "actions/checkout@v2"
     - run: "app1/.dash/external.sh"
     runs-on: "ubuntu-latest"
-  app1-deploy:dev:
+  app1-deploy-dev:
     needs: []
     steps:
     - uses: "actions/checkout@v2"
     - run: "app1/.dash/deployDev.sh"
     runs-on: "ubuntu-latest"
-  app1-deploy:staging:
+  app1-deploy-staging:
     needs:
-    - "app1-deploy:dev"
+    - "app1-deploy-dev"
     steps:
     - uses: "actions/checkout@v2"
     - run: "app1/.dash/deployStaging.sh"
     runs-on: "ubuntu-latest"
-  app1-deploy:prod:
+  app1-deploy-prod:
     needs:
-    - "app1-deploy:staging"
+    - "app1-deploy-staging"
     steps:
     - uses: "actions/checkout@v2"
     - run: "app1/.dash/deployProd.sh"
