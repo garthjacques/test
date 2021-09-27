@@ -4,7 +4,10 @@ name: "app2- Build"
     paths:
     - "app2/**"
 jobs:
-  build:
-    steps:
-    - run: "x_app2/.dash/build.sh"
-    runs-on: "ubuntu-latest"
+- steps:
+  - uses: "actions/checkout@v2"
+    with:
+      ref:
+        value: "refs/heads/main"
+  - run: "x_app2/.dash/build.sh"
+  runs-on: "ubuntu-latest"
