@@ -1,6 +1,5 @@
 dependencies:
 - "app1"
+environment-groups: []
 trigger-on:
 - "x_app2/**"
-
-

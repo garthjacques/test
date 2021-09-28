@@ -1,3 +1,4 @@
 dependencies: []
+environment-groups: []
 trigger-on:
 - "app1/**"
