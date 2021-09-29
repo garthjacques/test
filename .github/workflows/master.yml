@@ -2,6 +2,6 @@ on:
   - push
 jobs:
   call-child:
-    uses: garthjacques/test/.github/workflows/child.yml@$GITHUB_REF
+    uses: ${{ 'garthjacques/test/.github/workflows/child.yml@' + github.ref}}
     with:
       username: mona
