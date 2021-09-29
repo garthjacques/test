@@ -1,10 +1,10 @@
 on:
-  workflow_call:
+  - workflow_call:
     inputs:
       username:
         required: true
         type: string
-  workflow_dispatch:
+  - workflow_dispatch:
     inputs:
       username: hello
       type: string
