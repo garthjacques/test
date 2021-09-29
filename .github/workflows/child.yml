@@ -1,13 +1,9 @@
 on:
-  - workflow_call:
+  workflow_call:
     inputs:
       username:
         required: true
         type: string
-  - workflow_dispatch:
-    inputs:
-      username: hello
-      type: string
 
 jobs:
   example_job:
