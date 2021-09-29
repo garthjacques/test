@@ -4,6 +4,9 @@ on:
       username:
         required: true
         type: string
+  workflow_dispatch:
+    inputs:
+      username: hello
 
 jobs:
   example_job:
