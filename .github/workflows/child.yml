@@ -7,7 +7,7 @@ on:
 
 jobs:
   example_job:
-    name: Pass input and secrets to my-action
+    name: ${{ inputs.name }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello"
